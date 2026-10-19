@@ -17,6 +17,13 @@ body_mass_means <- tapply(
 )
 body_mass_means
 
+#4. Correlation between bill length &  depth
+cor(
+  penguins$bill_length_mm,
+  penguins$bill_depth_mm,
+  use = "complete.obs"
+)
+
 # Save analysis output to a text file
 sink("penguins-output.txt")
 
@@ -31,4 +38,12 @@ print(tab1)
 cat("\n3. Mean Body Mass by Species (grams)\n")
 print(body_mass_means)
 
+cat("\n4. Correlation Between Bill Length and Bill Depth\n")
+print(cor(
+  penguins$bill_length_mm,
+  penguins$bill_depth_mm,
+  use = "complete.obs"
+))
+
 sink()
+
